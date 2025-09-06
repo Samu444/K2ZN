@@ -1,0 +1,80 @@
+/* Login page styles - Codeacademy style */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #f5f0e1, #d8cfc4);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 480px;
+  padding: 3rem;
+  border-radius: 12px;
+  background-color: #ffffffcc;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.login-card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.login-card img {
+  display: block;
+  margin: 0 auto 15px auto;
+  width: 80px;
+}
+
+input.form-control {
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+input.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0,123,255,.25);
+}
+
+.invalid-feedback {
+  font-size: 0.9rem;
+}
+
+.text-center a {
+  text-decoration: none;
+}
+
+.btn-primary, .btn-success {
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 10px;
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .login-card {
+    padding: 2rem;
+  }
+
+  .login-card h2 {
+    font-size: 1.5rem;
+  }
+
+  input.form-control {
+    font-size: 0.95rem;
+    padding: 8px;
+  }
+
+  .btn-primary {
+    font-size: 1rem;
+    padding: 8px;
+  }
+}

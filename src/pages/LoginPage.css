@@ -1,0 +1,65 @@
+/* Login page styles */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #f5f0e1, #d8cfc4);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-card {
+  width: 400px;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  background-color: #ffffffcc;
+}
+
+.login-card h3 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.login-card img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+input.form-control {
+  border-radius: 6px;
+}
+
+input.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.invalid-feedback {
+  font-size: 0.875rem;
+}
+
+.text-center a {
+  text-decoration: none;
+}
+
+.btn-primary {
+  border-radius: 8px;
+  font-weight: 600;
+}
+/* Add at the top or bottom of Login.css */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.code-style-card {
+  animation: fadeInUp 0.8s ease forwards;
+}
