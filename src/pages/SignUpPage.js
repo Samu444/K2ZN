@@ -11,6 +11,24 @@ export default function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [agreeTerms, setAgreeTerms] = useState(false);
 
+  // Live validation: Full Name can only have letters and spaces
+  const handleFullNameChange = (e) => {
+    const value = e.target.value.replace(/[^A-Za-z\s]/g, "");
+    setFullName(value);
+
+    if (!value) {
+      setErrors((prev) => ({
+        ...prev,
+        fullName: "Full name is required",
+      }));
+    } else {
+      setErrors((prev) => {
+        const { fullName, ...rest } = prev;
+        return rest;
+      });
+    }
+  };
+
   const getPasswordStrength = () => {
     if (password.length === 0) return { label: "", color: "" };
     if (password.length < 6) return { label: "Weak", color: "red", value: 33 };
@@ -57,7 +75,7 @@ export default function SignUpPage() {
               type="text"
               className={`form-control ${errors.fullName ? "is-invalid" : ""}`}
               value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
+              onChange={handleFullNameChange}
               placeholder="John Doe"
             />
             {errors.fullName && <div className="invalid-feedback">{errors.fullName}</div>}
@@ -87,12 +105,15 @@ export default function SignUpPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter password"
               />
-              <button type="button" className="btn btn-outline-secondary" onClick={() => setShowPassword(!showPassword)}>
+              <button
+                type="button"
+                className="btn btn-outline-secondary"
+                onClick={() => setShowPassword(!showPassword)}
+              >
                 {showPassword ? "Hide" : "Show"}
               </button>
             </div>
             {errors.password && <div className="invalid-feedback d-block">{errors.password}</div>}
-
             {strength.label && (
               <div className="mt-1">
                 <div className="progress" style={{ height: "8px" }}>
